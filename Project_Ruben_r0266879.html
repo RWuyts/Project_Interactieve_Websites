@@ -260,14 +260,18 @@
             //provincie
             checkEmptyField("provincieKeuze","Kies een provincie!");
 
+            //validatie Email adres
+            if(!validateEmail(document.getElementById("email").value)){
+                errorArray.push("E-mailadres is niet correct.");
+            }
+
 
 
             //Meldingen weergeven
             if(errorArray.length != 0){
                 errorsWeergeven();
             }else{
-                document.getElementById("succesAlert").style.display = 'block';
-                document.getElementById("betalingAlert").style.display = 'block';
+                succesWeergeven();
             }
             
         }
@@ -285,7 +289,7 @@
             
         }
 
-        //alerts weergeven Functie
+        //errors weergeven Functie
         function errorsWeergeven(){
             //alert elment terug weergeven
             document.getElementById("errorAlert").style.display = 'block';
@@ -302,6 +306,25 @@
             });
 
         }
+
+        //succes weergeven Functie
+        function succesWeergeven(){
+            //succes element terug weergeven
+            document.getElementById("succesAlert").style.display = 'block';
+            document.getElementById("betalingAlert").style.display = 'block';
+            let alertKolom = document.getElementById("alertKolom");
+            let formKolom = document.getElementById("formKolom");
+            //grid aanpassen
+            formKolom.className = "col-sm-8 col-md-8 col-lg-8";
+            alertKolom.className = "col-sm-4 col-md-4 col-lg-4";
+        }
+
+        //email validatie Functie
+        function validateEmail(userMail){
+            const emailRegex = /^[^\s@.-]+[^\s@]+@[^\s@]+\.[0-9a-zA-Z]+[^\s@]$/;
+            return emailRegex.test(userMail);
+        }
+        //regex hulpmiddelen: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions
 
 
     </script>

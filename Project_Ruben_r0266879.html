@@ -148,7 +148,7 @@
                             <input type="text" class="form-control" id="inputPostcode">
                         </div>
                     </div>
-                    <br><hr>
+                    <hr>
                     <div class="row">
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <!--Nieuwsbrief en voorwaarden checkboxen-->
@@ -166,15 +166,52 @@
                                 </label>
                             </div>
                         </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <!--Betaling radio's-->
+                            <h4>Betaling</h4>
+                            <div class="form-check">
+                                <!--Bank app-->
+                                <input class="form-check-input" type="radio" name="bankingApplication" id="bankingApp">
+                                <label class="form-check-label" for="bankingApp">
+                                  Banking app
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <!--Overschrijving-->
+                                <input class="form-check-input" type="radio" name="geldOverschrijving" id="overschrijving">
+                                <label class="form-check-label" for="overschrijving">
+                                  Overschrijving
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <!--Visa-->
+                                <input class="form-check-input" type="radio" name="visaCard" id="visa">
+                                <label class="form-check-label" for="visa">
+                                  Visa card
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <!--PayPal-->
+                                <input class="form-check-input" type="radio" name="payPal" id="payPalApp">
+                                <label class="form-check-label" for="payPalApp">
+                                  PayPal
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
+            <!--alert(s)-->
             <div id="alertKolom">
                 <h4 id="alertHeader"></h4>
                 <p id="alertTekst"></p>
             </div>
         </div>
-        
+        <hr>
+        <!--Knop-->
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary btn-lg" type="button" onclick="validateForm()">Wave your magic wand</button>
+        </div>
     </main>
     <script>
         //form breedte instellen, later aanpassen wnr alerts weergeven

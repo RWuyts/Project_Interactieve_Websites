@@ -272,7 +272,8 @@
                 errorArray.push("E-mailadres is niet correct.");
             }
 
-
+            //validatie Betalingswijze
+            validatePayment("betalingsWijze");
 
             //Meldingen weergeven
             if(errorArray.length != 0){
@@ -342,6 +343,21 @@
             }
             if(input !== inputHerhaling){
                 errorArray.push("Wachtwoord moet exact herhaald worden!");
+            }
+        }
+
+        //betalings wijze validatie Functie
+        function validatePayment(veld){
+            let radios = document.getElementsByName(veld);
+           // const radioButtons = document.querySelectorAll('input[name="betalingsWijze"]');
+            radios.forEach(betaalWijze => {
+                if(betaalWijze.checked){
+                    document.getElementById("betalingTekst").textContent = "Je betalingswijze is " + betaalWijze.labels[0].textContent;
+                    //label van radiobutton aanspreken gehaald van: https://stackoverflow.com/questions/14709617/how-do-i-get-the-label-of-the-selected-radio-button-using-javascript
+                }
+            });
+            if (document.getElementById("betalingTekst").textContent.length === 0){
+                errorArray.push("Duid een betaal methode aan!");
             }
         }
 

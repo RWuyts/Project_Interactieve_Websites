@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <main class="container-fluid">
+    <main class="container-fluid" id="mainContainer">
         <!--Inleindende tekst-->
         <row class="row">
             <div class="col-6" id="headerFormulier">
@@ -27,121 +27,162 @@
             </div>
         </row>
         <!--Start formulier-->
-        <form>
-            <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-6">
-                    <!--Voornaam-->
-                    <div class="mb-3">
-                        <label for="inputVoornaam" class="form-label">Voornaam</label>
-                        <input type="text" class="form-control" id="inputVoornaam" placeholder="Uw voornaam" />
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-6">
-                    <!--Familienaam-->
-                    <div class="mb-3">
-                        <label for="inputFamilienaam" class="form-label">Naam</label>
-                        <input type="text" class="form-control" id="inputFamilienaam" placeholder="Uw naam" />
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-6">
-                    <!--Gebruikersnaam-->
-                    <label for="inputGebruikersnaamGroup">Gebruikersnaam</label>
-                    <div class="input-group mb-3" id="inputGebruikersnaamGroup">
-                        <span class="input-group-text">@</span>
-                        <input type="text" class="form-control" id="inputGebruikersnaam" placeholder="u911236" />
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-6">
-                    <!--Email-->
-                    <div class="mb-3">
-                        <label for="inputEmail">E-mailadres</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="mail@example.be" />
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-6">
-                    <!--Wachtwoord-->
-                    <div class="mb-3">
-                        <label for="inputWachtwoord" class="form-label">Wachtwoord</label>
-                        <input type="password" class="form-control" id="inputWachtwoord"
-                            aria-describedby="wachtwoordHelp" />
-                        <div id="wachtwoordHelp" class="form-text">
-                            Je wachtwoord moet minstens 8 tekens lang zijn
+        <div class="row" id="formRow">
+            <div id="formKolom">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <!--Voornaam-->
+                            <div class="mb-3">
+                                <label for="inputVoornaam" class="form-label">Voornaam</label>
+                                <input type="text" class="form-control" id="inputVoornaam" placeholder="Uw voornaam" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <!--Familienaam-->
+                            <div class="mb-3">
+                                <label for="inputFamilienaam" class="form-label">Naam</label>
+                                <input type="text" class="form-control" id="inputFamilienaam" placeholder="Uw naam" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-6">
-                    <!--Herhaling Wachtwoord-->
-                    <div class="mb-3">
-                        <label for="inputHerhalingWachtwoord" class="form-label">Herhaal wachtwoord</label>
-                        <input type="text" class="form-control" id="inputHerhalingWachtwoord" />
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <!--Gebruikersnaam-->
+                            <label for="inputGebruikersnaamGroup">Gebruikersnaam</label>
+                            <div class="input-group mb-3" id="inputGebruikersnaamGroup">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" id="inputGebruikersnaam" placeholder="u911236" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <!--Email-->
+                            <div class="mb-3">
+                                <label for="inputEmail">E-mailadres</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="mail@example.be" />
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <!--Adres-->
-                    <div class="mb-3">
-                        <label for="inputAdres" class="form-label">Adres</label>
-                        <input type="text" class="form-control" id="inputAdres" placeholder="Uw adres en huisnummer" />
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <!--Wachtwoord-->
+                            <div class="mb-3">
+                                <label for="inputWachtwoord" class="form-label">Wachtwoord</label>
+                                <input type="password" class="form-control" id="inputWachtwoord"
+                                    aria-describedby="wachtwoordHelp" />
+                                <div id="wachtwoordHelp" class="form-text">
+                                    Je wachtwoord moet minstens 8 tekens lang zijn
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <!--Herhaling Wachtwoord-->
+                            <div class="mb-3">
+                                <label for="inputHerhalingWachtwoord" class="form-label">Herhaal wachtwoord</label>
+                                <input type="text" class="form-control" id="inputHerhalingWachtwoord" />
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <!--Adres-->
+                            <div class="mb-3">
+                                <label for="inputAdres" class="form-label">Adres</label>
+                                <input type="text" class="form-control" id="inputAdres" placeholder="Uw adres en huisnummer" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-5 col-lg-5">
+                            <!--Land-->
+                            <label for="landKeuze" class="form-label">Land</label>
+                            <select class="form-select" aria-label="land keuze" id="landKeuze">
+                                <option selected>Kies een land</option>
+                                <option value="1">België</option>
+                                <option value="2">Duitsland</option>
+                                <option value="3">Nederland</option>
+                                <option value="4">Frankrijk</option>
+                                <option value="5">Verenigd Koningkrijk</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <!--Provincie-->
+                            <label for="provincieKeuze" class="form-label">Provincie</label>
+                            <select class="form-select" aria-label="provincie keuze" id="provincieKeuze">
+                                <option selected>Kies een provincie</option>
+                                <!--Belgische provincies-->
+                                <option value="1">Antwerpen (BE)</option>
+                                <option value="2">Limburg (BE)</option>
+                                <option value="3">West-Vlaanderen (BE)</option>
+                                <option value="4">Henegouwen (BE)</option>
+                                <option value="5">Luik (BE)</option>
+                                <!--Duitse provincies-->
+                                <option value="1">Beieren (DE)</option>
+                                <option value="2">Brandenburg (DE)</option>
+                                <option value="3">Berlijn (DE)</option>
+                                <option value="4">Nedersaksen (DE)</option>
+                                <option value="5">Hessen (DE)</option>
+                                <!--Nederlands provincies-->
+                                <option value="1">Flevoland (NL)</option>
+                                <option value="2">Friesland (NL)</option>
+                                <option value="3">Groningen (NL)</option>
+                                <option value="4">Drenthe (NL)</option>
+                                <option value="5">Gelderland (NL)</option>
+                                <!--Franse provincies-->
+                                <option value="1">Bretagne (FR)</option>
+                                <option value="2">Normandie (FR)</option>
+                                <option value="3">Provence (FR)</option>
+                                <option value="4">Ile-de-France (FR)</option>
+                                <option value="5">Occitanie (FR)</option>
+                                <!--Verenigd Koningkrijk "provincies"-->
+                                <option value="1">Scotland (UK)</option>
+                                <option value="2">Wales (UK)</option>
+                                <option value="3">West Midlands (UK)</option>
+                                <option value="4">Anglia (UK)</option>
+                                <option value="5">North East (UK)</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <!--Postcode-->
+                            <label for="inputPostcode" class="form-label">Postcode</label>
+                            <input type="text" class="form-control" id="inputPostcode">
+                        </div>
+                    </div>
+                    <br><hr>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <!--Nieuwsbrief en voorwaarden checkboxen-->
+                            <h4>Hou me op de hoogte</h4>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="nieuwsbriefCheck">
+                                <label class="form-check-label" for="nieuwsbriefCheck">
+                                  Inschrijven voor onze nieuwsbrief
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="voorwaardenCheck">
+                                <label class="form-check-label" for="voorwaardenCheck">
+                                  Ik ga akkoord met de algemene voorwaarden.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-6">
-                    <!--Land-->
-                    <select class="form-select" aria-label="land keuze" id="landKeuze">
-                        <option selected>Kies een land</option>
-                        <option value="1">België</option>
-                        <option value="2">Duitsland</option>
-                        <option value="3">Nederland</option>
-                        <option value="4">Frankrijk</option>
-                        <option value="5">Verenigd Koningkrijk</option>
-                      </select>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-6">
-                    <!--Provincie-->
-                    <select class="form-select" aria-label="provincie keuze" id="provincieKeuze">
-                        <option selected>Kies een provincie</option>
-                        <!--Belgische provincies-->
-                        <option value="1">Antwerpen (BE)</option>
-                        <option value="2">Limburg (BE)</option>
-                        <option value="3">West-Vlaanderen (BE)</option>
-                        <option value="4">Henegouwen (BE)</option>
-                        <option value="5">Luik (BE)</option>
-                        <!--Duitse provincies-->
-                        <option value="1">Beieren (DE)</option>
-                        <option value="2">Brandenburg (DE)</option>
-                        <option value="3">Berlijn (DE)</option>
-                        <option value="4">Nedersaksen (DE)</option>
-                        <option value="5">Hessen (DE)</option>
-                        <!--Nederlands provincies-->
-                        <option value="1">Flevoland (NL)</option>
-                        <option value="2">Friesland (NL)</option>
-                        <option value="3">Groningen (NL)</option>
-                        <option value="4">Drenthe (NL)</option>
-                        <option value="5">Gelderland (NL)</option>
-                        <!--Franse provincies-->
-                        <option value="1">Bretagne (FR)</option>
-                        <option value="2">Normandie (FR)</option>
-                        <option value="3">Provence (FR)</option>
-                        <option value="4">Ile-de-France (FR)</option>
-                        <option value="5">Occitanie (FR)</option>
-                        <!--Verenigd Koningkrijk "provincies"-->
-                        <option value="1">Scotland (UK)</option>
-                        <option value="2">Wales (UK)</option>
-                        <option value="3">West Midlands (UK)</option>
-                        <option value="4">Anglia (UK)</option>
-                        <option value="5">North East (UK)</option>
-                      </select>
-                </div>
+            <div id="alertKolom">
+                <h4 id="alertHeader"></h4>
+                <p id="alertTekst"></p>
             </div>
-        </form>
+        </div>
+        
     </main>
-    <script></script>
+    <script>
+        //form breedte instellen, later aanpassen wnr alerts weergeven
+        let formKolom = document.getElementById("formKolom");
+        formKolom.className = "col-sm-12 col-md-12 col-lg-12";
+
+
+    </script>
     <!--Bootstrap script-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"

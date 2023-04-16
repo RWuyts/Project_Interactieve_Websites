@@ -81,7 +81,7 @@
                             <!--Herhaling Wachtwoord-->
                             <div class="mb-3">
                                 <label for="herhalingWachtwoord" class="form-label">Herhaal wachtwoord</label>
-                                <input type="text" class="form-control" id="herhalingWachtwoord" />
+                                <input type="password" class="form-control" id="herhalingWachtwoord" />
                             </div>
                         </div>
                     </div>
@@ -173,28 +173,28 @@
                             <h4>Betaling</h4>
                             <div class="form-check">
                                 <!--Bank app-->
-                                <input class="form-check-input" type="radio" name="bankingApplication" id="bankingApp">
+                                <input class="form-check-input" type="radio" name="betalingsWijze" id="bankingApp">
                                 <label class="form-check-label" for="bankingApp">
                                   Banking app
                                 </label>
                             </div>
                             <div class="form-check">
                                 <!--Overschrijving-->
-                                <input class="form-check-input" type="radio" name="geldOverschrijving" id="overschrijving">
+                                <input class="form-check-input" type="radio" name="betalingsWijze" id="overschrijving">
                                 <label class="form-check-label" for="overschrijving">
                                   Overschrijving
                                 </label>
                             </div>
                             <div class="form-check">
                                 <!--Visa-->
-                                <input class="form-check-input" type="radio" name="visaCard" id="visa">
+                                <input class="form-check-input" type="radio" name="betalingsWijze" id="visa">
                                 <label class="form-check-label" for="visa">
                                   Visa card
                                 </label>
                             </div>
                             <div class="form-check">
                                 <!--PayPal-->
-                                <input class="form-check-input" type="radio" name="payPal" id="payPalApp">
+                                <input class="form-check-input" type="radio" name="betalingsWijze" id="payPalApp">
                                 <label class="form-check-label" for="payPalApp">
                                   PayPal
                                 </label>
@@ -259,6 +259,13 @@
             checkEmptyField("landKeuze","Kies een land!");
             //provincie
             checkEmptyField("provincieKeuze","Kies een provincie!");
+            //wachtwoord
+            checkEmptyField("wachtwoord","Wachtwoord moet ingevuld zijn!");
+            //herhaling wachtwoord
+            checkEmptyField("herhalingWachtwoord", "Wachtwoord moet herhaald worden!");
+
+            //validatie wachtwoord
+            validateWachtwoord("wachtwoord", "herhalingWachtwoord");
 
             //validatie Email adres
             if(!validateEmail(document.getElementById("email").value)){
@@ -326,6 +333,17 @@
         }
         //regex hulpmiddelen: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions
 
+        //wachtwoord validatie Functie
+        function validateWachtwoord(veld, herhalingVeld){
+            let input = document.getElementById(veld).value;
+            let inputHerhaling = document.getElementById(herhalingVeld).value;
+            if(input.length < 8){
+                errorArray.push("Wachtwoord moet minimum 8 karakters lang zijn!");
+            }
+            if(input !== inputHerhaling){
+                errorArray.push("Wachtwoord moet exact herhaald worden!");
+            }
+        }
 
     </script>
     <!--Bootstrap script-->

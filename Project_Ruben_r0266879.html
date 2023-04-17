@@ -279,7 +279,7 @@
             //validatie Betalingswijze
             validatePayment("betalingsWijze");
             //validatie postcode
-            validatePostcode("postcode");
+            checkPC("postcode");
             //validatie voorwaarden
             if (!document.getElementById("voorwaardenCheck").checked) {
                 errorArray.push("Je moet de algemene voorwaarden accepteren.");
@@ -370,7 +370,7 @@
         }
 
         //postcode validatie Functie
-        function validatePostcode(veld) {
+        function checkPC(veld) {
             if (document.getElementById(veld).value.length != 0) {
                 let postcode = parseInt(document.getElementById(veld).value);
                 const errorTekst = "De waarde van postcode moet tussen 1000 en 9999 liggen.";
